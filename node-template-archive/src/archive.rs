@@ -24,6 +24,7 @@ use node_template_runtime::{
     opaque::Block
 };
 use substrate_archive::{
+    Archive,
     ArchiveBuilder,
     ArchiveConfig
 };
