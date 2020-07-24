@@ -28,7 +28,7 @@ use substrate_archive::{
     ArchiveConfig
 };
 
-pub async fn run_archive(config: Config) -> Result<()> {
+pub async fn run_archive(config: super::config::Config) -> Result<impl Archive<Block>> {
 
     // get spec from file
     let spec = config.cli().chain_spec.clone();
@@ -52,7 +52,6 @@ pub async fn run_archive(config: Config) -> Result<()> {
             conf,
             Box::new(spec),
         )?;
-    archive.run().await?;
-    Ok(())
+    Ok(archive.run().await?)
 
 }

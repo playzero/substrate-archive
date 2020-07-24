@@ -36,5 +36,6 @@ async fn ctrlc() -> Result<()> {
         .await
         .expect("failed to listen on ctrlc");
     println!("\nShutting down ...");
+
     Ok(())
 }
