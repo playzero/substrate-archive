@@ -1,4 +1,6 @@
 /target
 **/*.rs.bk
 .idea/*
+
 .env
+.cargo-remote.toml

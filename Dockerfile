@@ -8,8 +8,11 @@ LABEL maintainer "marco@one.io"
 WORKDIR /builder
 COPY . /builder
 
-RUN $HOME/.cargo/bin/cargo build --release --bin node-template-archive
-RUN mkdir -p /builder/bin && mv ./target/release/node-template-archive /builder/bin/substrate-archive
+RUN $HOME/.cargo/bin/cargo build --release --bin node-template-archive && \
+    $HOME/.cargo/bin/cargo build --release --bin polkadot-archive && \
+    mkdir -p /builder/bin && \
+    mv ./target/release/node-template-archive /builder/bin/substrate-archive && \
+    mv ./target/release/polkadot-archive /builder/bin/polkadot-archive
 
 #
 #
@@ -19,7 +22,7 @@ FROM phusion/baseimage:latest-amd64
 LABEL maintainer "marco@one.io"
 LABEL description="substrate archive"
 
-COPY --from=builder /builder/bin/substrate-archive /usr/local/bin/substrate-archive
+COPY --from=builder /builder/bin/*-archive /usr/local/bin/
 
 RUN mv /usr/share/ca* /tmp && \
     rm -rf /usr/share/*  && \
@@ -32,4 +35,4 @@ USER archive
 EXPOSE 30333 9933 9944
 VOLUME ["/data"]
 
-ENTRYPOINT ["/usr/local/bin/substrate-archive"]
+# ENTRYPOINT ["/usr/local/bin/substrate-archive"]

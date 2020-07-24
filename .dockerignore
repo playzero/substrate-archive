@@ -1,5 +1,5 @@
 .git
 .github
 ./scripts
-./subzero
 ./target
+./cargo-remote.toml
