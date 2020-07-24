@@ -3,7 +3,7 @@
 # Substrate Archive
 ### Blockchain Indexing Engine
 
-[Install the CLI](#install-the-cli) • [Documentation](#documentation) • [Contributing](#contributing) 
+[Install the CLI](#install-the-cli) • [Documentation](#documentation) • [Contributing](#contributing)
 
 ![Rust](https://github.com/paritytech/substrate-archive/workflows/Rust/badge.svg)
 
@@ -12,11 +12,11 @@
 Run alongside a substrate-backed chain to index all Blocks, State, and Extrinsic data into PostgreSQL.
 
 # Usage
-The schema for the PostgreSQL database is described in the PDF File at the root of this directory.
+The schema for the PostgreSQL database is described in the PDF File in the doc directory.
 
 Examples for how to use substrate-archive are in the [`examples/`](https://github.com/paritytech/substrate-archive/tree/master/archive/examples) directory
 
-# Prerequisites 
+# Prerequisites
 Extended requirements list found in the [wiki](https://github.com/paritytech/substrate-archive/wiki/)
 - depending on the chain you want to index, ~60GB free space
 - PostgreSQL with a database ready for lots of new data
@@ -40,7 +40,7 @@ The CLI is an easier way to get started with substrate-archive. It provides a ba
 # Contributing
 Contributors are welcome!
 
-Read the [Doc](https://github.com/paritytech/substrate-archive/blob/master/CONTRIBUTING.md) 
+Read the [Doc](https://github.com/paritytech/substrate-archive/blob/master/CONTRIBUTING.md)
 
 # Documentation
 
@@ -65,7 +65,7 @@ More Docs [here]( https://github.com/paritytech/substrate-archive/wiki)
         root        hard    nofile      90000
         root        soft    nofile      90000
         ```
-  
+
 
 # Contact
 
