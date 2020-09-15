@@ -1,0 +1,19 @@
+[package]
+name = "polkadot-archive"
+version = "0.2.1"
+authors = ["Andrew Plaza <aplaza@liquidthink.net>"]
+edition = "2018"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+substrate-archive = { path = "../../", features = ["logging"] }
+polkadot-service = { package = "polkadot-service", git = "https://github.com/paritytech/polkadot", branch = "master" }
+sc-chain-spec = { package = "sc-chain-spec", git = "https://github.com/paritytech/substrate", branch = "master" }
+clap = { version = "2.33.1", features = ["yaml", "suggestions", "color"] }
+toml = "0.5"
+log = "0.4"
+anyhow = "1.0"
+serde = "1.0"
+smol = "0.3.3"
+ctrlc = { version = "3.1.5", features = ["termination"] }
